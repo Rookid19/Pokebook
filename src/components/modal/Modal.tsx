@@ -69,7 +69,8 @@ const stylesObj: any = {
   },
   2: {
     position: "absolute" as "absolute",
-    left: "70%",
+    display: "flex",
+    justifyContent: "flex-end",
     width: "100%",
     outline: "none",
   },

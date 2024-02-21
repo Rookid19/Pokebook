@@ -2,6 +2,8 @@
   background-color: var(--white);
   height: 100vh;
   width: 500px;
+  /* auto scroll */
+  overflow-y: auto;
 }
 
 .card {
@@ -82,7 +84,7 @@
     rgba(217, 217, 217, 0.06) 51.04%,
     #ffffff 100%
   );
-  width: 510px;
+  /* width: 510px; */
   height: 172px;
 }
 

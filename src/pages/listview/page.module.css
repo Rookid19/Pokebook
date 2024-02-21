@@ -20,4 +20,16 @@
   font-size: 50px;
 }
 
-/* dsfsfdsfsdf */
+@media only screen and (max-width: 430px) {
+  .card_container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 60px 20px;
+    width: 90%;
+    margin: 100px auto;
+    zoom: 0.6;
+  }
+
+  .pagination_offset {
+    zoom: 0.6;
+  }
+}

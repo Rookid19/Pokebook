@@ -117,12 +117,8 @@ function ListView() {
           />
         ))}
       </div>
-      {/* {currentItems.length !== } */}
-      {/* length {(Object.keys(pokemonsDescription) || []).length}{" "}
-      <button onClick={fetchGamesDescriptions}>fetchGamesDescriptions</button> */}
-      <br />
-      {/* <button onClick={fetchPokemom}>fetch</button> */}
-      <div className={styles.pagination_offset}>
+
+       <div className={styles.pagination_offset}>
         <Pagination
           currentPage={currentPage}
           totalPages={totalPages}
@@ -132,7 +128,7 @@ function ListView() {
           selectedOption={itemsPerPage}
           setSelectedOption={setItemsPerPage}
         />
-      </div>
+      </div> 
     </div>
   );
 }

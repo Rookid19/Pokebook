@@ -51,7 +51,7 @@ export default function Home() {
               backgroundColor: colorTheme,
               pointerEvents: searchInput.length > 0 ? "auto" : "none",
             }}
-            onClick={() => router.push(`/search?name=${searchInput}`)}
+            onClick={() => router.push(`/search?name=${searchInput.toLowerCase()}`)}
           >
             <RiSearch2Line color={"white"} size={24} />
           </div>
@@ -59,8 +59,6 @@ export default function Home() {
         <div className={styles.view} onClick={() => router.push("/listview")}>
           View all
         </div>
-        <br />
-        <br />
       </main>
     </>
   );

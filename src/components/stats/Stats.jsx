@@ -46,6 +46,7 @@ function StatsTemplate() {
 
   return (
     <div className={styles.container}>
+  
       <div style={{ paddingTop: 20 }}>
         <div
           className={styles.card}
@@ -130,12 +131,12 @@ const About = ({ pokemonsDescription, pokename }) => {
       </div>
       <div className={styles.info}>
         <div className={styles.label}>Abilities</div>
-        {/* <div className={styles.value}>Overgrow</div> */}
-        <div className={styles.value}>
+        <div className={styles.value}>Overgrow</div>
+        {/* <div className={styles.value}>
           {pokemonsDescription?.[pokename]?.abilities.map((ability, index) => (
             <div key={index}>{ability.ability.name}</div>
           ))}
-        </div>
+        </div> */}
       </div>
     </div>
   );
