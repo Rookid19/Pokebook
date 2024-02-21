@@ -1,12 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./Card.module.css";
 import Image from "next/image";
 import image from "../../../public/assets/images/chizard.png";
 import { RiEyeLine } from "react-icons/ri";
 
-function Card() {
+function Card({ id }: { id: number }) {
+  const [isHovered, setHovered] = useState<any>({});
   return (
-    <div className={styles.container}>
+    <div
+      className={styles.container}
+      onMouseEnter={() => setHovered({ ...isHovered, [id]: true })}
+      onMouseLeave={() => setHovered({})}
+    >
       <div className={styles.small_card}>
         <Image
           src={image}
@@ -20,10 +25,12 @@ function Card() {
         <div className={styles.type}>Fire</div>
         <div className={styles.type}>Flying</div>
       </div>
-      <div className={styles.view}>
-        <div className={styles.view_name}>View Pokeman</div>
-        <RiEyeLine color={"white"} />
-      </div>
+      {isHovered[id] && (
+        <div className={styles.view}>
+          <div className={styles.view_name}>View Pokeman</div>
+          <RiEyeLine color={"white"} />
+        </div>
+      )}
     </div>
   );
 }

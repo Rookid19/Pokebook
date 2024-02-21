@@ -31,14 +31,12 @@ function ListView() {
     setData([...Array(150)]);
   }, []);
 
-  // ==========
-
   return (
     <div>
       <Navbar />
       <div className={styles.card_container}>
         {[...Array(8)].map((_, i) => (
-          <Card key={i} />
+          <Card key={i} id={i} />
         ))}
       </div>
       cc {currentPage} {selectedOption}
