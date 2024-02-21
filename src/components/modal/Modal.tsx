@@ -5,6 +5,7 @@ import styles from "./Modal.module.css";
 import { NextRouter, useRouter } from "next/router";
 import { colors } from "@/utils/colors";
 import ColorThemeTemplate from "../colorTheme/ColorTheme";
+import StatsTemplate from "../stats/Stats";
 
 export const ModalContext = createContext({});
 
@@ -26,6 +27,7 @@ export const ModalProvider = ({ children }: { children: ReactNode }) => {
         colorTheme={colorTheme}
       />
     ),
+    2: <StatsTemplate />,
   };
 
   return (
@@ -58,17 +60,20 @@ const stylesObj: any = {
     left: "50%",
     transform: "translate(-50%, -50%)",
     width: 320,
+    outline: "none",
     // heigh: 100,
     // bgcolor: "background.paper",
     // boxShadow: 24,
     // p: 1,
     // border: "none",
     // borderRadius: 6,
-    // outline: "none",
   },
   2: {
-    top: "50%",
-    left: "50%",
-    transform: "translate(-50%, -50%)",
+    position: "absolute" as "absolute",
+    // top: "50%",
+    left: "75%",
+    // transform: "translate(-50%, -50%)",
+    width: "100%",
+    outline: "none",
   },
 };

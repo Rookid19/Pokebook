@@ -9,7 +9,7 @@ import useModal from "@/components/modal/Modal";
 
 export default function Home() {
   const router = useRouter();
-  const { handleOpenModal, colorTheme }: any = useModal();
+  const { handleOpenModal, colorTheme, setTemplateId }: any = useModal();
   return (
     <>
       <Head>
@@ -50,7 +50,17 @@ export default function Home() {
         <div className={styles.view} onClick={() => router.push("/listview")}>
           View all
         </div>
-        <button onClick={handleOpenModal}>sdfd</button>
+        <br />
+        <br />
+        
+        <button
+          onClick={() => {
+            setTemplateId(2);
+            handleOpenModal();
+          }}
+        >
+          sdfd
+        </button>
       </main>
     </>
   );

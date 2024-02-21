@@ -9,7 +9,7 @@ import useModal from "../modal/Modal";
 function Navbar() {
   const router = useRouter();
 
-  const { colorTheme, handleOpenModal }: any = useModal();
+  const { colorTheme, handleOpenModal, setTemplateId }: any = useModal();
 
   return (
     <div className={styles.container}>
@@ -34,7 +34,13 @@ function Navbar() {
           <input type="text" className={styles.search} placeholder="Search" />
         </div>
       </div>
-      <div className={styles.theme_wrapper} onClick={handleOpenModal}>
+      <div
+        className={styles.theme_wrapper}
+        onClick={() => {
+          setTemplateId(1);
+          handleOpenModal();
+        }}
+      >
         <div
           className={styles.theme}
           style={{
