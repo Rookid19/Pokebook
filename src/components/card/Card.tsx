@@ -3,9 +3,11 @@ import styles from "./Card.module.css";
 import Image from "next/image";
 import image from "../../../public/assets/images/chizard.png";
 import { RiEyeLine } from "react-icons/ri";
+import useModal from "../modal/Modal";
 
 function Card({ id }: { id: number }) {
   const [isHovered, setHovered] = useState<any>({});
+  const {colorTheme} :any = useModal();
   return (
     <div
       className={styles.container}
@@ -26,7 +28,12 @@ function Card({ id }: { id: number }) {
         <div className={styles.type}>Flying</div>
       </div>
       {isHovered[id] && (
-        <div className={styles.view}>
+        <div
+          className={styles.view}
+          style={{
+            backgroundColor: colorTheme,
+          }}
+        >
           <div className={styles.view_name}>View Pokeman</div>
           <RiEyeLine color={"white"} />
         </div>

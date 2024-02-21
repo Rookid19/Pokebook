@@ -1,7 +1,9 @@
 import { RiArrowLeftSLine, RiArrowRightSLine } from "react-icons/ri";
 import styles from "./Pagination.module.css";
+import useModal from "../modal/Modal";
 
 const Pagination = ({ currentPage, totalPages, onPageChange }: any) => {
+  const { colorTheme }: any = useModal();
   const getPageNumbers = () => {
     const pageNumbers = [];
 
@@ -52,9 +54,10 @@ const Pagination = ({ currentPage, totalPages, onPageChange }: any) => {
             {getPageNumbers().map((pageNumber, index) => (
               <div
                 key={index}
-                className={`${styles.paginationItem} ${
-                  currentPage === pageNumber ? styles.active : ""
-                }`}
+                className={styles.paginationItem}
+                style={{
+                  backgroundColor: currentPage === pageNumber ? colorTheme : "",
+                }}
                 onClick={() => onPageChange(pageNumber)}
               >
                 {pageNumber}

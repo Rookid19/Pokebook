@@ -9,7 +9,7 @@ import useModal from "@/components/modal/Modal";
 
 export default function Home() {
   const router = useRouter();
-  const { handleOpenModal }: any = useModal();
+  const { handleOpenModal, colorTheme }: any = useModal();
   return (
     <>
       <Head>
@@ -21,16 +21,29 @@ export default function Home() {
       <main className={styles.container}>
         <Image src={logo} alt="PokeBook Logo" />
         <div className={styles.name}>
-          Poké <span id={styles.book}>book</span>
+          Poké{" "}
+          <span id={styles.book} style={{ color: colorTheme }}>
+            book
+          </span>
         </div>
         <div className={styles.info}>
           Largest Pokémon index with information <br /> about every Pokemon you
           can think of.
         </div>
 
-        <div className={styles.search_container}>
+        <div
+          className={styles.search_container}
+          style={{
+            backgroundColor: colorTheme,
+          }}
+        >
           <input className={styles.search} placeholder="Enter pokemon name" />
-          <div className={styles.search_circle}>
+          <div
+            className={styles.search_circle}
+            style={{
+              backgroundColor: colorTheme,
+            }}
+          >
             <RiSearch2Line color={"white"} size={24} />
           </div>
         </div>

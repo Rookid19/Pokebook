@@ -2,15 +2,15 @@ import React, { ReactNode, createContext, useContext, useState } from "react";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 import styles from "./Modal.module.css";
-// import Button from "../button/button";
 import { NextRouter, useRouter } from "next/router";
-// import { fetcher } from "@/services/global/api";
-// import TextInput from "../textinput/textInput";
+import { colors } from "@/utils/colors";
 
 export const ModalContext = createContext({});
 
 export const ModalProvider = ({ children }: { children: ReactNode }) => {
   const [open, setOpen] = useState(false);
+  const [colorTheme, setColorTheme] = useState(colors.primary);
+
   const handleOpenModal = () => setOpen(true);
   const handleCloseModal = () => setOpen(false);
   const router = useRouter();
@@ -20,13 +20,16 @@ export const ModalProvider = ({ children }: { children: ReactNode }) => {
 
   const templates: any = {
     1: (
-      <ColorThemeTemplate router={router} handleCloseModal={handleCloseModal} />
+      <ColorThemeTemplate
+        setColorTheme={setColorTheme}
+        colorTheme={colorTheme}
+      />
     ),
   };
 
   return (
     <ModalContext.Provider
-      value={{ handleOpenModal, handleCloseModal, setTemplateId }}
+      value={{ handleOpenModal, handleCloseModal, setTemplateId, colorTheme }}
     >
       <Modal
         open={open}
@@ -47,17 +50,29 @@ export default function useModal() {
 
 // templates
 
-const ColorThemeTemplate = ({
-  router,
-  handleCloseModal,
-}: {
-  router: NextRouter;
-  handleCloseModal: () => any;
-}) => {
+const ColorThemeTemplate = ({ setColorTheme, colorTheme }: any) => {
+  const Colors = [colors.primary, colors.secondary, colors.tertiary];
+
   return (
     <div>
       <div className={styles.head}>Choose Theme</div>
-      <div className={styles.body}></div>
+      <div className={styles.body}>
+        {Colors.map((color, index) => (
+          <div
+            className={styles.theme_wrapper}
+            id={colorTheme === color ? styles.theme_wrapper_active : ""}
+            key={index}
+            onClick={() => setColorTheme(color)}
+          >
+            <div
+              className={styles.theme}
+              style={{
+                backgroundColor: color,
+              }}
+            ></div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

@@ -12,6 +12,33 @@
 
 .body {
   background-color: #ebebeb;
-  height: 200px;
+  height: 150px;
   border-radius: 0 0 20px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.theme_wrapper {
+  width: 58px;
+  height: 58px;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.theme {
+  width: 49px;
+  height: 49px;
+  border-radius: 50px;
+}
+
+.theme_wrapper:hover {
+  background: #e85382;
+  transition: 0.5s;
+}
+
+#theme_wrapper_active {
+  border: 1px solid #868686;
 }

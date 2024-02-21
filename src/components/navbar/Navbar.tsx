@@ -4,12 +4,16 @@ import Image from "next/image";
 import logo from "../../../public/assets/images/poke_logo.svg";
 import { RiSearch2Line } from "react-icons/ri";
 import { useRouter } from "next/router";
+import useModal from "../modal/Modal";
 
 function Navbar() {
-  const router = useRouter()
+  const router = useRouter();
+
+  const { colorTheme, handleOpenModal }: any = useModal();
+
   return (
-    <div className={styles.container} >
-      <div className={styles.row} onClick={() => router.push('/')}>
+    <div className={styles.container}>
+      <div className={styles.row} onClick={() => router.push("/")}>
         <Image
           src={logo}
           alt="PokeBook Logo"
@@ -17,7 +21,10 @@ function Navbar() {
           height={120}
           width={130.71}
         />
-        <div className={styles.name}>Pokebook</div>
+        <div className={styles.name}>
+          Poke
+          <span style={{ color: colorTheme }}>book</span>
+        </div>
       </div>
       <div className={styles.search_container}>
         <div className={styles.icon}>
@@ -27,8 +34,13 @@ function Navbar() {
           <input type="text" className={styles.search} placeholder="Search" />
         </div>
       </div>
-      <div className={styles.theme_wrapper}>
-        <div className={styles.theme}></div>
+      <div className={styles.theme_wrapper} onClick={handleOpenModal}>
+        <div
+          className={styles.theme}
+          style={{
+            backgroundColor: colorTheme,
+          }}
+        ></div>
       </div>
     </div>
   );
