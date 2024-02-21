@@ -71,7 +71,7 @@ const stylesObj: any = {
   2: {
     position: "absolute" as "absolute",
     // top: "50%",
-    left: "75%",
+    left: "70%",
     // transform: "translate(-50%, -50%)",
     width: "100%",
     outline: "none",

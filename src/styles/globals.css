@@ -1,3 +1,9 @@
+:root {
+  --white: #ffffff;
+  --light-silver: #eeeeee;
+  --black: #000000;
+}
+
 body {
   margin: 0;
   font-family: "Inter", sans-serif;
