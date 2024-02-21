@@ -1,0 +1,78 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+}
+
+.name {
+  font-size: 48px;
+  font-weight: 600;
+}
+
+#book {
+  color: #e85382;
+}
+
+.info {
+  font-size: 18px;
+  font-weight: 200;
+  line-height: 24.3px;
+  /* text-align: center; */
+}
+
+.search {
+  box-shadow: 0px 4px 4px 0px #0000000d;
+  border-radius: 30px;
+  height: 64px;
+  width: 470px;
+  align-self: center;
+  border: 1px solid #e1e1e1;
+  outline: none;
+  margin-left: 12px;
+  padding-inline: 20px;
+  font-size: 24px;
+}
+
+.search::placeholder {
+  /* font-size: 24px; */
+  font-weight: lighter;
+  /* color: #7b7b7b; */
+  /* color: red; */
+}
+
+.search_container {
+  position: relative;
+  width: 536px;
+  height: 81px;
+  border-radius: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* justify-content: center; */
+  background-color: #e85382;
+  box-shadow: 0px 4px 4px 0px #00000014 inset;
+  margin-top: 80px;
+}
+
+.view {
+  text-decoration: underline;
+  font-size: 18px;
+  font-weight: 400;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+.search_circle {
+  position: absolute;
+  right: 22px;
+  background-color: #e85382;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 4px 4px 0px #00000026;
+}
