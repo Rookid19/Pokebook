@@ -5,9 +5,17 @@ import image from "../../../public/assets/images/chizard.png";
 import { RiEyeLine } from "react-icons/ri";
 import useModal from "../modal/Modal";
 
-function Card({ id }: { id: number }) {
+function Card({
+  id,
+  item,
+  pokemonsDescription,
+}: {
+  id: number;
+  item: any;
+  pokemonsDescription: any;
+}) {
   const [isHovered, setHovered] = useState<any>({});
-  const {colorTheme} :any = useModal();
+  const { colorTheme }: any = useModal();
   return (
     <div
       className={styles.container}
@@ -16,16 +24,29 @@ function Card({ id }: { id: number }) {
     >
       <div className={styles.small_card}>
         <Image
-          src={image}
+          // src={image}
+          src={
+            pokemonsDescription?.[item?.name]?.sprites.other.dream_world
+              .front_default
+          }
           alt="PokeBook Logo"
-          // height={187} width={191}
+          height={187}
+          width={191}
           className={styles.image}
         />
       </div>
-      <div className={styles.name}>charizard</div>
+      <div className={styles.name}>{item.name}</div>
       <div className={styles.types}>
-        <div className={styles.type}>Fire</div>
-        <div className={styles.type}>Flying</div>
+        {pokemonsDescription?.[item?.name]?.types[0] && (
+          <div className={styles.type}>
+            {pokemonsDescription?.[item?.name]?.types[0]?.type.name}
+          </div>
+        )}
+        {pokemonsDescription?.[item?.name]?.types[1] && (
+          <div className={styles.type}>
+            {pokemonsDescription?.[item?.name]?.types[1]?.type.name}
+          </div>
+        )}
       </div>
       {isHovered[id] && (
         <div
