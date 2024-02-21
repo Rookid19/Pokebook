@@ -5,9 +5,11 @@ import Image from "next/image";
 import logo from "../../public/assets/images/poke_logo.svg";
 import { RiSearch2Line } from "react-icons/ri";
 import { useRouter } from "next/router";
+import useModal from "@/components/modal/Modal";
 
 export default function Home() {
   const router = useRouter();
+  const { handleOpenModal }: any = useModal();
   return (
     <>
       <Head>
@@ -35,6 +37,7 @@ export default function Home() {
         <div className={styles.view} onClick={() => router.push("/listview")}>
           View all
         </div>
+        <button onClick={handleOpenModal}>sdfd</button>
       </main>
     </>
   );

@@ -1,7 +1,7 @@
 import React, { ReactNode, createContext, useContext, useState } from "react";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
-import styles from "./modal.module.css";
+import styles from "./Modal.module.css";
 // import Button from "../button/button";
 import { NextRouter, useRouter } from "next/router";
 // import { fetcher } from "@/services/global/api";
@@ -16,7 +16,7 @@ export const ModalProvider = ({ children }: { children: ReactNode }) => {
   const router = useRouter();
 
   // tempalte id
-  const [templateId, setTemplateId] = useState(2);
+  const [templateId, setTemplateId] = useState(1);
 
   const templates: any = {
     1: (
@@ -34,9 +34,7 @@ export const ModalProvider = ({ children }: { children: ReactNode }) => {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box className={styles.box_container} fontStyle={stylesObj[templateId]}>
-          {templates[templateId]}
-        </Box>
+        <Box sx={stylesObj[templateId]}>{templates[templateId]}</Box>
       </Modal>
       {children}
     </ModalContext.Provider>
@@ -57,17 +55,27 @@ const ColorThemeTemplate = ({
   handleCloseModal: () => any;
 }) => {
   return (
-    <>
-      <div>hello</div>
-    </>
+    <div>
+      <div className={styles.head}>Choose Theme</div>
+      <div className={styles.body}></div>
+    </div>
   );
 };
 
 const stylesObj: any = {
   1: {
+    position: "absolute" as "absolute",
     top: "50%",
     left: "50%",
     transform: "translate(-50%, -50%)",
+    width: 320,
+    // heigh: 100,
+    // bgcolor: "background.paper",
+    // boxShadow: 24,
+    // p: 1,
+    // border: "none",
+    // borderRadius: 6,
+    // outline: "none",
   },
   2: {
     top: "50%",

@@ -1,0 +1,17 @@
+.head {
+  height: 57px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 600;
+  box-shadow: 0px 4px 4px 0px #00000008;
+  background: #ffffff;
+  border-radius: 20px 20px 0 0;
+}
+
+.body {
+  background-color: #ebebeb;
+  height: 200px;
+  border-radius: 0 0 20px 20px;
+}
