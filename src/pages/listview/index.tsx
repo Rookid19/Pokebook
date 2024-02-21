@@ -13,12 +13,12 @@ function ListView() {
   const [data, setData] = useState<any>([]);
   const [selectedOption, setSelectedOption] = useState(8);
 
-  const itemsPerPage = 1;
 
+  // Pagination
+  const itemsPerPage = 1;
   const handlePageChange = (pageNumber: number) => {
     setCurrentPage(pageNumber);
   };
-
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   let currentItems = data?.slice(indexOfFirstItem, indexOfLastItem);
@@ -33,6 +33,7 @@ function ListView() {
     setData([...Array(150)]);
   }, []);
 
+  
   const pokemons = useSelector(pokemonsData);
 
   return (
