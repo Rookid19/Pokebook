@@ -52,15 +52,6 @@ export default function Home() {
         </div>
         <br />
         <br />
-        
-        <button
-          onClick={() => {
-            setTemplateId(2);
-            handleOpenModal();
-          }}
-        >
-          sdfd
-        </button>
       </main>
     </>
   );
