@@ -5,6 +5,8 @@ import React, { useEffect, useState } from "react";
 import styles from "./page.module.css";
 import Pagination from "@/components/pagination/Pagination";
 import Dropdown from "@/components/dropdown/Dropdown";
+import { pokemonsData } from "@/slices/pokemonSlice";
+import { useSelector } from "react-redux";
 
 function ListView() {
   const [currentPage, setCurrentPage] = useState(1);
@@ -31,6 +33,8 @@ function ListView() {
     setData([...Array(150)]);
   }, []);
 
+  const pokemons = useSelector(pokemonsData);
+
   return (
     <div>
       <Navbar />
@@ -39,6 +43,7 @@ function ListView() {
           <Card key={i} id={i} />
         ))}
       </div>
+      {JSON.stringify(pokemons)} <br />
       cc {currentPage} {selectedOption}
       <div className={styles.pagination_offset}>
         <Pagination

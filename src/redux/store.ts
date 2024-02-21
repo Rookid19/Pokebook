@@ -1,9 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit'
-import pokemanReducer from '../slices/pokemanSlice'
+import pokemonReducer from '../slices/pokemonSlice'
 
 export const store = configureStore({
     reducer: {
-        notes: pokemanReducer,
+        pokemon: pokemonReducer,
     },
     // middleware: (getDefaultMiddleware) => [...getDefaultMiddleware({ serializableCheck: false })], // Exclude serializableCheck middleware
 })
