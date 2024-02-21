@@ -9,7 +9,7 @@ import useModal from "@/components/modal/Modal";
 
 export default function Home() {
   const router = useRouter();
-  const { handleOpenModal, colorTheme, setTemplateId }: any = useModal();
+  const { colorTheme }: any = useModal();
   return (
     <>
       <Head>
@@ -52,6 +52,15 @@ export default function Home() {
         </div>
         <br />
         <br />
+
+        {/* <button
+          onClick={() => {
+            setTemplateId(2);
+            handleOpenModal();
+          }}
+        >
+          sdfd
+        </button> */}
       </main>
     </>
   );

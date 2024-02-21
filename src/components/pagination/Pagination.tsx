@@ -57,6 +57,7 @@ const Pagination = ({ currentPage, totalPages, onPageChange }: any) => {
                 className={styles.paginationItem}
                 style={{
                   backgroundColor: currentPage === pageNumber ? colorTheme : "",
+                  color: currentPage === pageNumber ? "white" : "",
                 }}
                 onClick={() => onPageChange(pageNumber)}
               >

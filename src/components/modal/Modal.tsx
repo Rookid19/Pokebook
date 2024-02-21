@@ -1,8 +1,6 @@
 import React, { ReactNode, createContext, useContext, useState } from "react";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
-import styles from "./Modal.module.css";
-import { NextRouter, useRouter } from "next/router";
 import { colors } from "@/utils/colors";
 import ColorThemeTemplate from "../colorTheme/ColorTheme";
 import StatsTemplate from "../stats/Stats";
@@ -12,10 +10,10 @@ export const ModalContext = createContext({});
 export const ModalProvider = ({ children }: { children: ReactNode }) => {
   const [open, setOpen] = useState(false);
   const [colorTheme, setColorTheme] = useState(colors.primary);
+  const [pokename, setPokename] = useState("");
 
   const handleOpenModal = () => setOpen(true);
   const handleCloseModal = () => setOpen(false);
-  const router = useRouter();
 
   // tempalte id
   const [templateId, setTemplateId] = useState(1);
@@ -32,7 +30,14 @@ export const ModalProvider = ({ children }: { children: ReactNode }) => {
 
   return (
     <ModalContext.Provider
-      value={{ handleOpenModal, handleCloseModal, setTemplateId, colorTheme }}
+      value={{
+        handleOpenModal,
+        handleCloseModal,
+        setTemplateId,
+        colorTheme,
+        pokename,
+        setPokename,
+      }}
     >
       <Modal
         open={open}
@@ -61,18 +66,10 @@ const stylesObj: any = {
     transform: "translate(-50%, -50%)",
     width: 320,
     outline: "none",
-    // heigh: 100,
-    // bgcolor: "background.paper",
-    // boxShadow: 24,
-    // p: 1,
-    // border: "none",
-    // borderRadius: 6,
   },
   2: {
     position: "absolute" as "absolute",
-    // top: "50%",
     left: "70%",
-    // transform: "translate(-50%, -50%)",
     width: "100%",
     outline: "none",
   },

@@ -15,7 +15,9 @@ function Card({
   pokemonsDescription: any;
 }) {
   const [isHovered, setHovered] = useState<any>({});
-  const { colorTheme }: any = useModal();
+  const { colorTheme, setPokename }: any = useModal();
+
+  const { setTemplateId, handleOpenModal }: any = useModal();
   return (
     <div
       className={styles.container}
@@ -54,8 +56,18 @@ function Card({
           style={{
             backgroundColor: colorTheme,
           }}
+          onClick={() => {
+            setTemplateId(2);
+            handleOpenModal();
+            setPokename(item.name);
+          }}
         >
-          <div className={styles.view_name}>View Pokeman</div>
+          <div
+            className={styles.view_name}
+           
+          >
+            View Pokeman
+          </div>
           <RiEyeLine color={"white"} />
         </div>
       )}

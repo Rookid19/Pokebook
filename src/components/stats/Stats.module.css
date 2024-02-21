@@ -9,11 +9,9 @@
   margin: 0 auto;
   height: 250px;
   border-radius: 15px;
-  background: linear-gradient(180deg, #7fcad1 0%, #3da0a9 100%);
+  /* background: linear-gradient(180deg, #7fcad1 0%, #3da0a9 100%);
+   */
   box-shadow: 0px 4px 4px 0px #0000001a inset;
-  /* position: relative; */
-
-  /* margin-inline: 20px; */
 }
 
 .back {
@@ -28,6 +26,7 @@
   margin: 30px 40px;
   box-shadow: 0px 4px 4px 0px #0000001a;
   border-radius: 9px;
+  cursor: pointer;
 }
 
 .image {

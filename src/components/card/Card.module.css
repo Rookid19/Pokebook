@@ -57,6 +57,7 @@
   border-radius: 14px;
   background: #e85382;
   margin-top: 20px;
+  cursor: pointer;
 }
 
 .view_name {
