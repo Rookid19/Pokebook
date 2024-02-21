@@ -66,7 +66,7 @@ function Card({
             className={styles.view_name}
            
           >
-            View Pokeman
+            View Pokeman {item?.name}
           </div>
           <RiEyeLine color={"white"} />
         </div>

@@ -1,6 +1,6 @@
 import Head from "next/head";
 import styles from "@/styles/Home.module.css";
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import logo from "../../public/assets/images/poke_logo.svg";
 import { RiSearch2Line } from "react-icons/ri";
@@ -10,6 +10,8 @@ import useModal from "@/components/modal/Modal";
 export default function Home() {
   const router = useRouter();
   const { colorTheme }: any = useModal();
+
+  const [searchInput, setSearchInput] = useState<string>("");
   return (
     <>
       <Head>
@@ -37,12 +39,19 @@ export default function Home() {
             backgroundColor: colorTheme,
           }}
         >
-          <input className={styles.search} placeholder="Enter pokemon name" />
+          <input
+            className={styles.search}
+            placeholder="Enter pokemon name"
+            onChange={(e) => setSearchInput(e.target.value)}
+            value={searchInput}
+          />
           <div
             className={styles.search_circle}
             style={{
               backgroundColor: colorTheme,
+              pointerEvents: searchInput.length > 0 ? "auto" : "none",
             }}
+            onClick={() => router.push(`/search?name=${searchInput}`)}
           >
             <RiSearch2Line color={"white"} size={24} />
           </div>
@@ -52,15 +61,6 @@ export default function Home() {
         </div>
         <br />
         <br />
-
-        {/* <button
-          onClick={() => {
-            setTemplateId(2);
-            handleOpenModal();
-          }}
-        >
-          sdfd
-        </button> */}
       </main>
     </>
   );
